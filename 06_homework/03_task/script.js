@@ -36,7 +36,7 @@ console.log(movies.sort(byProperty('movieName', '>')));
 function byProperty(property, direction) {
     return function (currentMovie, nextMovie) {
         if (direction === '>') {
-            currentMovie[property] > nextMovie[property] ? 1 : -1;
-        } else { currentMovie[property] < nextMovie[property] ? -1 : 1; }
+            return currentMovie[property] > nextMovie[property] ? 1 : -1;
+        } else if (direction === '<'){ return currentMovie[property] < nextMovie[property] ? 1 : -1; }
     }
 }
