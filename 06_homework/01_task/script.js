@@ -1,0 +1,10 @@
+'use script'
+
+console.log(addThemAll(2,4)); // 6
+console.log(addThemAll(1,2,3,4)); // 10
+console.log(addThemAll(5,5,10)); // 20
+
+function addThemAll (...numbers) {
+    const sum = numbers.reduce((a,b) => a + b)
+    return sum
+}
