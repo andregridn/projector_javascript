@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+tr {
+  cursor: pointer;
+  background-color: #7a3838;
+}
+
+body {
+  background-color: #3548fe;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #ffffff;
+}
+
+h1 {
+  margin-bottom: 24px;
+}
+
+.active {
+  color: red;
+}
+
+#block {
+  background-color: orange;
+}
