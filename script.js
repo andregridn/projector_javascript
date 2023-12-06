@@ -19,8 +19,8 @@ if (theme === 'light-theme') {
 // Button text and log
 button.innerText = body.classList.contains('light-theme') ? 'Turn off' : 'Turn on';
 
-// If logs exist in LocalStorage, show it
-showTime();
+// If logs exist in LocalStorage, show it or log the time previous mode was set.
+logTime();
 
 button.addEventListener('click', lightSwitch);
 
@@ -30,17 +30,6 @@ function lightSwitch() {
     localStorage.setItem('theme', body.classList.contains('light-theme') ? 'light-theme' : 'dark-theme');
     button.innerText = body.classList.contains('light-theme') ? 'Turn off' : 'Turn on';
     logTime();
-}
-
-function showTime() {
-    const lastPressOn = localStorage.getItem('lastPressOn');
-    const lastPressOff = localStorage.getItem('lastPressOff');
-
-    if (body.classList.contains('light-theme')) {
-        log.innerText = lastPressOn ? `Last turn on: ${lastPressOn}` : '';
-    } else {
-        log.innerText = lastPressOff ? `Last turn off: ${lastPressOff}` : ''
-    }
 }
 
 function logTime() {
@@ -67,6 +56,4 @@ function logTime() {
         localStorage.setItem('lastPressOn', formattedTime);
         log.innerText = lastPressOff ? `Last turn off: ${lastPressOff}` : ''
     }
-
-    showTime();
 }
