@@ -12,7 +12,7 @@ class Animal {
 
     describe() {
         this.age = this.getAge ? this.getAge() : this.age;
-        console.log(`This is a ${this.name}, it's ${this.color}, ${this.age} years old and ${this.#isHealthy ? 'has a good health' : 'sick'}`)
+        console.log(`This is a ${this.name}, it's ${this.color}, ${this.age} years old and ${this.#isHealthy ? 'has a good health' : 'is sick'}`)
     }
 }
 
@@ -75,15 +75,3 @@ class Bird extends Animal {
         return this.#age;
     }
 }
-
-const lion = new Animal('King', 'white', 'meat', 3, false)
-lion.describe()
-
-const dog = new Dog('Dick', 'light buff', 'meat', 10);
-dog.describe();
-dog.hunt();
-console.log(dog.diet)
-
-const Birdie = new Bird('Birdie', 'gray', 'worms', '2', true, true)
-Birdie.fly()
-Birdie.describe()
